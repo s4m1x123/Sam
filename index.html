@@ -17,13 +17,29 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title + Image Section */
+.header-section {
+  background-color: #1a1a1a;
+  border: 2px solid #bfa76f;
+  padding: 25px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(191,167,111,0.2);
+  margin-bottom: 25px;
 }
 
 h1 {
-  font-size: 3rem;
-  margin: 40px 0;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
   color: #e6c67a;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .images {
@@ -31,56 +47,62 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
 }
 
 .circle img {
-  width: 180px;
-  height: 180px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
-  border: 3px solid #bfa76f;
+  border: 4px solid #bfa76f;
   object-fit: cover;
 }
 
 .square img {
-  width: 200px;
-  height: 200px;
-  border: 3px solid #bfa76f;
+  width: 250px;
+  height: 250px;
+  border: 4px solid #bfa76f;
   object-fit: cover;
+}
+
+/* Members */
+.members-title {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #e6c67a;
 }
 
 .members {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  font-size: 1.2rem;
-  margin-bottom: 60px;
+  gap: 10px;
+  font-size: 1.1rem;
 }
 
 .members p {
   background-color: #1b1b1b;
   border: 1px solid #bfa76f;
-  padding: 10px 20px;
+  padding: 6px 14px;
   border-radius: 10px;
   color: #e6c67a;
-  min-width: 180px;
 }
 </style>
 </head>
 <body>
 
-<h1>لاوانی ماردین</h1>
-
-<div class="images">
-  <div class="circle">
-    <img src="2b9c40225fb113929b46f3eeff37ef91.jpeg">
-  </div>
-  <div class="square">
-    <img src="IMG_6871.jpeg">
+<div class="header-section">
+  <h1>لاوانی ماردین</h1>
+  <div class="images">
+    <div class="circle">
+      <img src="https://source.unsplash.com/300x300/?portrait" alt="Circle Photo">
+    </div>
+    <div class="square">
+      <img src="https://source.unsplash.com/300x300/?nature" alt="Square Photo">
+    </div>
   </div>
 </div>
+
+<div class="members-title">ئەندامەکان :</div>
 
 <div class="members">
   <p>سەفین ڕزگار</p>
