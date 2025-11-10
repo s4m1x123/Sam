@@ -25,7 +25,7 @@ body {
   align-items: center;
 }
 
-/* Title + Image Section */
+/* Title + Circle Section */
 .header-section {
   background-color: #1a1a1a;
   border: 2px solid #bfa76f;
@@ -33,35 +33,34 @@ body {
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(191,167,111,0.2);
   margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 4px solid #bfa76f;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
 h1 {
   font-size: 3.5rem;
-  margin-bottom: 20px;
+  margin: 0;
   color: #e6c67a;
   letter-spacing: 3px;
 }
 
-.images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-
-.circle img {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  border: 4px solid #bfa76f;
-  object-fit: cover;
-}
-
+/* Square Image */
 .square img {
-  width: 250px;
-  height: 250px;
+  width: 260px;
+  height: 260px;
   border: 4px solid #bfa76f;
   object-fit: cover;
+  margin-bottom: 15px;
 }
 
 /* Members */
@@ -91,18 +90,17 @@ h1 {
 <body>
 
 <div class="header-section">
-  <h1>لاوانی ماردین</h1>
-  <div class="images">
-    <div class="circle">
-      <img src="2b9c40225fb113929b46f3eeff37ef91.jpeg">
-    </div>
-    <div class="square">
-      <img src="IMG_6871.jpeg">
-    </div>
+  <div class="circle">
+    <img src="2b9c40225fb113929b46f3eeff37ef91.jpeg">
   </div>
+  <h1>لاوانی ماردین</h1>
 </div>
 
-<div class="members-title">ئەندامەکان :</div>
+<div class="square">
+  <img src="https://source.unsplash.com/300x300/?nature" alt="Square Photo">
+</div>
+
+<div class="members-title">ئەندامەکان</div>
 
 <div class="members">
   <p>سەفین ڕزگار</p>
