@@ -17,50 +17,42 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
 }
 
-/* Title + Circle Section */
 .header-section {
   background-color: #1a1a1a;
   border: 2px solid #bfa76f;
-  padding: 25px 40px;
+  padding: 20px 30px;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(191,167,111,0.2);
-  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .circle img {
-  width: 240px;
-  height: 240px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  border: 4px solid #bfa76f;
+  border: 3px solid #bfa76f;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 0;
   color: #e6c67a;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
-/* Square Image */
 .square img {
-  width: 260px;
-  height: 260px;
+  width: 250px;
+  height: 250px;
   border: 4px solid #bfa76f;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 /* Members */
@@ -76,6 +68,7 @@ h1 {
   flex-wrap: wrap;
   gap: 10px;
   font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 .members p {
@@ -83,6 +76,27 @@ h1 {
   border: 1px solid #bfa76f;
   padding: 6px 14px;
   border-radius: 10px;
+  color: #e6c67a;
+  cursor: pointer;
+}
+
+/* Selected Member Display */
+.selected-member {
+  margin-top: 10px;
+}
+
+.selected-member img {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #bfa76f;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.selected-member p {
+  margin: 5px 0;
+  font-size: 1.1rem;
   color: #e6c67a;
 }
 </style>
@@ -100,16 +114,65 @@ h1 {
   <img src="IMG_6871.jpeg">
 </div>
 
-<div class="members-title">ئەندامەکان</div>
+<div class="members-title">ئەندامەکان :</div>
 
 <div class="members">
-  <p>سەفین ڕزگار</p>
-  <p>سام سەرکەوت</p>
-  <p>ڕەوا موفق</p>
-  <p>هەستی موفق</p>
-  <p>ژیار فاروق</p>
-  <p>محمد فاروق</p>
+  <p onclick="showMember('safin')">سەفین ڕزگار</p>
+  <p onclick="showMember('sam')">سام سەرکەوت</p>
+  <p onclick="showMember('rawa')">ڕەوا موفق</p>
+  <p onclick="showMember('hasti')">هەستی موفق</p>
+  <p onclick="showMember('zhiyar')">ژیار فاروق</p>
+  <p onclick="showMember('mohammed')">محمد فاروق</p>
 </div>
 
+<div class="selected-member" id="selected-member">
+  <!-- Clicked member info will appear here -->
+</div>
+
+<script>
+const membersData = {
+  safin: {
+    img: 'IMG_1802.jpeg',
+    name: 'سەفین ڕزگار',
+    position: 'ناوەراست'
+  },
+  sam: {
+    img: 'IMG_1794.jpeg',
+    name: 'سام سەرکەوت',
+    position:'ناوەراست'
+  },
+  rawa: {
+    img: 'IMG_1804.jpeg',
+    name: 'ڕەوا موفق',
+    position: 'دیفاع'
+  },
+  hasti: {
+    img: 'att.rGpQECZC_jnFO-JseNciZXJ1Qg9CaQ7oeNNdaYB9-3s.jpeg',
+    name: 'هەستی موفق',
+    position: 'ناوەراست'
+  },
+  zhiyar: {
+    img: 'IMG_1795.jpeg',
+    name: 'ژیار فاروق',
+    position: 'گۆڵچی'
+  },
+  mohammed: {
+    img: 'IMG_1805.jpeg',
+    name: 'محمد فاروق',
+    position: 'دیفاع'
+  }
+};
+
+function showMember(id) {
+  const container = document.getElementById('selected-member');
+  const member = membersData[id];
+  container.innerHTML = `
+    <img src="${member.img}" alt="${member.name}">
+    <p>ناو: ${member.name}</p>
+    <p>شوێنی یاریکردن: ${member.position}</p>
+  `;
+}
+</script>
+<h4>کلیک لە ناوەکان بکە</h4>
 </body>
 </html>
